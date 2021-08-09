@@ -31,7 +31,7 @@ resource "aws_iam_role" "cluster_iam_role" {
   name = "cluster_iam_role"
   assume_role_policy = jsonencode({
     Statement = [{
-      Action = "sts:AssumerRole"
+      Action = "sts:AssumeRole"
       Effect = "Allow"
       Principal = {
         Service = "eks.amazonaws.com"
