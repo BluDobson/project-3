@@ -70,111 +70,18 @@ The project planning was done through a Trello board. This consists of a Backlog
 
 
 #### Terraform
-**Service 1** is the Main service. Service 1 communicates with service 2, 3 and 4 and presists data to a MySQL database. The main service will perform a  **GET request on Service 2 and Service 3** and a **POST request on Service 4**. The responses attained from service 2, service 3 & service 4 are used by service 1 to display information to the user via HTML and Jinja2 templating. Furthermore, I configured the databse to allow the user to see the last three holidays that were genearted via a query to the database. 
 
-**routes located:  service1/application/routes.py**
 
-```bash
-@app.route('/', methods=['GET','POST'])
-def index():
-    #get the name of the city 
-    city = requests.get("http://service_2_api:5001/city")
-    #get the activty 
-    activity = requests.get("http://service_3_api:5002/activity")
-    price_network = str(city.text) + " " + str(activity.text) 
-    price = requests.post("http://service_4_api:5003/price", data=price_network)
-    last_3_holidays = holiday_plan.query.order_by(desc(holiday_plan.id)).limit(3).all()
-    db.session.add(
-      holiday_plan(
-          city = city.text,
-          activity = activity.text,
-          price = price.text
-      )
-    )
-    db.session.commit()
-    return render_template('index.html', title='Holiday Generator', 
-    city = city.text, 
-    activity=activity.text, price = price.text, 
-    price_network=price_network, 
-    last_3_holidays=last_3_holidays)
-```
-
-A generator button was included in the HTML file to allow users to generate a random holiday. 
-
-**routes located:  service1/application/templates/index.html**
-```bash
-<a href="{{ url_for('index')}}"><button>Generate</button></a>
-```
 #### Kubernetes
 
-This service generates a random city. There are 4 possible cities that can be generated.
-
-
-**routes located:  service2/application/routes.py**
-
-```bash
-@app.route('/city', methods=['GET'])
-def city():
-
-  cities = ["London", "Barcelona", "Milan", "Tokyo"]
-  city = random.choice(cities)
-  return Response(city, mimetype="text/plain")
-```
 
 
 #### Jenkins
 
-This service generates a random activity. There are 4 possible activities that can be generated. 
-
-```bash
-@app.route('/activity', methods=['GET'])
-def activity():
-
-  activities = ["Paintballing", "Surfing", "Snorkelling", "Skiing"]
-  activity = random.choice(activities)
-
-  return Response(activity, mimetype="text/plain")
-```
 
 #### Service 4
 
-```
 
-<a name="Front"></a>
-### Front End 
-
-Examples of the front end that users will interact with 
-
-<img src="/documentation/frontend1.png" alt="" width="50%" height="50%"/>
-<img src="/documentation/frontend2.png" alt="" width="50%" height="50%"/>
-<img src="/documentation/frontend3.png" alt="" width="50%" height="50%"/>
-
-
-
-
-<a name="test_"></a>
-## Testing
-All services were tested using mocking through either requests_mock, unittest.mock and pytest. 
-
-<a name="test_1"></a>
-### Service 1 tests
-
-The requests_mock library was used to mock and test the service through pytest library. 
-The 'patch' method was used to return the price by changing the functionality and tested against the return data gained from services 2,3 and 4. 
-
-**Service 1 test** complete test can be found at [test_service_1.py](https://github.com/InaamIslam/DevOps_Project2/blob/develop/service1/testing/test_service1.py)
-
-```bash
-class TestService1(TestBase):
-    def test_service1(self):
-        with requests_mock.Mocker() as mocker:
-            mocker.get("http://service_2_api:5001/city", text='London')
-            mocker.get("http://service_3_api:5002/activity", text='Paintballing')
-            mocker.post("http://service_4_api:5003/price", text='200') 
-            response = self.client.get(url_for('index'))
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b'The total cost of your holiday will be 200 GBP', response.data)
-```
 <a name="test_2/3"></a>
 ### Service 2 & 3 tests
 
