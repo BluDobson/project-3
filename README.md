@@ -1,13 +1,17 @@
-# DevOps_Project2
+# DevOps Final Project
 
 ## Random holiday generator
 
 ## Author
+### Albert Richards
+### Bradley Dobson
 ### Inaam Islam
+### Umayr Ahmed 
+### Zahra Ahmed
 
 ### Links
-- [Trello](https://trello.com/b/kFb089Jf/random-holiday-generator-start)
-- [Risk Assessment](https://docs.google.com/spreadsheets/d/14yRvZVZBuPhvAV8yGtDGZbKzVS5RcJnY/edit#gid=1358709700)
+- [Trello](https://trello.com/b/Puwzu6nB/final-project)
+- [Risk Assessment]()
 
 ## Contents
 - [Brief](#brief)
