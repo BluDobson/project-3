@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name:  backend
+   labels:
+     app:  backend
+spec:
+   ports:
+     - protocol: TCP
+       port: 9966
+       targetPort: 9966
+   selector:
+     app:  backend
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app:  backend
+  template:
+    metadata:
+      labels:
+        app:  backend
+    spec:
+      containers:
+        - name:  backend
+          image: 
+          image: team4qa/backend:latest
+          imagePullPolicy: "Always"
+          ports:
+          - name: backend
+            containerPort: 9966
