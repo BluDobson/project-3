@@ -3,11 +3,11 @@
 ## Random holiday generator
 
 ## Author
-### Albert Richards
-### Bradley Dobson
-### Inaam Islam
-### Umayr Ahmed 
-### Zahra Ahmed
+- Albert Richards
+- Bradley Dobson
+- Inaam Islam
+- Umayr Ahmed 
+- Zahra Ahmed
 
 ### Links
 - [Trello](https://trello.com/b/Puwzu6nB/final-project)
