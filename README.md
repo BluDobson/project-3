@@ -87,27 +87,29 @@ For the risk assessments we produced an initial risk assessment that was created
 ### Initial Risk Assessment
 Below is a snapshot of part of our initial Risk Assessment:
 
+<img width="880" alt="Initial RA" src="https://user-images.githubusercontent.com/84901993/128882342-e745abb0-72a4-4e62-8102-acbb933ad867.PNG">
+
 The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
 <a name=finalra></a>
 ### Final Risk Assessment
+
+Below is a snapshot of part of our final Risk Assessment:
+
+
+The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
 
 
 <a name="tech"></a>
 ## Technologies Utilised
 
-* VCS: GitHub\
-* Project Tracking: Trello\
-* Programming language: Python\
-* Framework: Flask\
-* Deployment: Gunicorn\
-* Database: GCP SQL Server\
-* CI Server: Jenkins\
-* Test Reporting: Pytest, unittest.mock\
-* Live Environment: GCP\
-* Containerization: Docker\
-* Configuration Management: Ansible\
-* Orchestration: Docker-compose\
-* Reverse proxy: Nginx\
+* Project Tracking: Trello
+* Version Control System: GitHub
+* Cloud Service: Amazon Web Services
+* Containerization: Docker
+* Version Control for Docker Images: Dockerhub
+* Continous Intergration Server: Jenkins
+* Orchestration Service for Containers: Kubernetes
+* Load Balancing: Nginx
 
 
 
@@ -115,28 +117,13 @@ The full Risk Assessment can be found on the [Github Repository](https://github.
 <a name="suc"></a>
 ## Things that went well 
 
-A number of things went well for me on this project:
-
-* Microservice Apllication
-    - I was able to develop the applicationa and containerise using Docker
-    - I was able to deploy this as part of a swarm using Docker Compose
-* Jenkins
-    - I was able to build, test, deploy and configure using Jenkins
-    - rolling updates were possible through webhooks and CI/CD
-* Linux
-    - User Administration
-    - Sudoers 
-    - SSH
-
+A number of things went well for us on this project:
 
 
 
 <a name="improve"></a>
 ## Areas for improvement:
 
-* NGINX -load balancer -This would have been useful but not entirley required as the Docker Swarm is able to load balance and so I decided to use NGINX as a reverse proxy only. 
-
-* Implementing the use of JSON to increase data parsing speed, and also as part of sending data between services. 
 
 <a name="gitlink"></a>
 ## Github Links
