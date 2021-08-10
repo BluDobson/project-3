@@ -17,10 +17,10 @@
     - [Trello Board](#planning)
     - [Collaboration](#services)
 - [Architecture](#arch)
-    - [Container level architecture](#cla)
-    - [Application Infrastructure](#appinf)
-- [Continous Integration Pipeline ](#ci)
+    - [Infrastructure](#cla)
 - [Risk Assessment](#risks)
+    - [Initial Risk Assessment](#initial)
+    - [Final Risk Assessment](#finalra)
 - [Technologies utilised](#tech)
 - [Things that went well](#suc)
 - [Areas for improvement ](#improve)
@@ -69,44 +69,28 @@ This was the first group project that we had attempted, so we tried to combine a
 <a name="arch"></a>
 ## Architecture
 
-![project](https://user-images.githubusercontent.com/84901993/128856042-b2d79c13-e9f6-4b02-bff1-86f103de27de.png)
-A microservice application architectured through building objects & containerisation 
-
-<img src="/documentation/userservice1.png" alt="" width="50%" height="50%"/>
-
-This is an updated version. The applications connect on different ports for each of the 4 services, 5001, 5002, and 5003 respectivley.
-<img src="/documentation/userservice2.png" alt="" width="50%" height="50%"/>
-
-
 <a name="cla"></a>
-### Container level architecture
-The container level architecture was designed as below:
+### Infrastructure
+Shown below is a diagram of the Infrastructure we aimed to achieve:
 
-<img src="/documentation/services.png" alt="" width="100%" height="100%"/>
-
-
-<a name="appinf"></a>
-### Application Infrastructure
-
-<img src="/documentation/appinfrastructure.png" alt="" width="100%" height="100%"/>
+![project](https://user-images.githubusercontent.com/84901993/128856042-b2d79c13-e9f6-4b02-bff1-86f103de27de.png)
 
 
 <a name="ci"></a>
-## Continous Integration Pipeline 
 
-This is my final version for my CI pipeline. My cluster was confirgured with two nodes. Ansible and Jenins were installed in separate Virtual machines. A MySQL GCP instance was used for the Database. The pipeline allowed for a lean and agile approach to implementing the application. 
-
-
-The jenkinsfile shows a 5 step process that would allow for the testing, installation, configuration and deployment of the app. 
-
-<img src="/documentation/cipipeline.png" alt="" width="100%" height="100%"/>
 
 <a name=risks></a>
 ## Risk Assessment
 
-I considered a number of risks that could take place in the development and use of the application 
+For the risk assessments we produced an initial risk assessment that was created before we attempted to complete the project. Upon completion of the project we then went back to the initial assessment to review it and create our final risk assessment.
+<a name=initial></a>
+### Initial Risk Assessment
+Below is a snapshot of part of our initial Risk Assessment:
 
-<img src="/documentation/riskassessment.png" alt="" width="100%" height="100%"/>
+The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
+<a name=finalra></a>
+### Final Risk Assessment
+
 
 <a name="tech"></a>
 ## Technologies Utilised
