@@ -1,7 +1,5 @@
 # DevOps Final Project
 
-## Random holiday generator
-
 ## Author
 - Albert Richards
 - Bradley Dobson
@@ -36,15 +34,7 @@
 <a name="brief"></a>
 ## Brief
 
-The brief for the DevOps core practical project was to create a microservice application that would generate "objects" upon a set of predefined rules.
-
-This project will involve concepts from previous training modules, including:
-
--Software Development with Python
-
--Continuous Integration
-
--Cloud Fundamentals
+The brief for the DevOps Final Project is to deploy an application for a 'Spring Pet Clinic’ domain where we have a front end client using AngularJS and an API using Java.
 
 <a name="reqs"></a>
 ### Requirements 
