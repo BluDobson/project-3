@@ -10,6 +10,11 @@ pipeline {
                     
             }
         }
+        stage('Kubernetes Cluster') {
+            steps {
+            
+            }        
+        }
         stage('Test') {
             steps {
                                     
