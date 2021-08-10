@@ -9,7 +9,6 @@
 
 ### Links
 - [Trello](https://trello.com/b/Puwzu6nB/final-project)
-- [Risk Assessment]()
 
 ## Contents
 - [Brief](#brief)
@@ -39,22 +38,19 @@ The brief for the DevOps Final Project is to deploy an application for a 'Spring
 <a name="reqs"></a>
 ### Requirements 
 
-The requirements of the project were as follows:
+The requirements of the project, retrieved from the [QA-Community website](https://qa-community.co.uk/~/_/projects/final--devops) are as follows:
 
-The requirements set for the project are below.
-Note that these are a minimum set of requirements and can be added onto during the duration of the project.
+You will need to plan, design and implement a solution for automating the development workflows and deployments of this application. As part of your final deliverable you will need to discuss the project in a presentation and demonstrate these workflows
 
-The requirements of the project are as follows:
+Using what you have learned consider the following:
 
--An Asana board (or equivalent Kanban board tech) with full expansion on tasks needed to complete the project.
-This could also provide a record of any issues or risks that you faced creating your project.\
--An Application fully integrated using the Feature-Branch model into a Version Control System which will subsequently be built through a CI server and deployed to a cloud-based virtual machine.\
--If a change is made to a code base, then Webhooks should be used so that Jenkins recreates and redeploys the changed application\
--The project must follow the Service-oriented architecture that has been asked for.\
--The project must be deployed using containerisation and an orchestration tool.\
--As part of the project, you need to create an Ansible Playbook that will provision the environment that your application needs to run.\
--The project must make use of a reverse proxy to make your application accessible to the user.\
+-What tools will work for you best? For example: Terraform, Kubernetes, Ansible etc. There is no restrictions or requirements on which ones to use; you should decide which you feel are most appropriate and justify their use
 
+-Multiple Environment support: How can a developer test their new features on an environment before merging their changes to the main branch?
+
+-How can changes on the GitHub repository automatically build and deploy to testing and live environments?
+
+-Running costs. What are your monthly estimates? How could they be improved?
 
 <a name="building"></a>
 ### Building the Application
