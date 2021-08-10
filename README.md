@@ -145,6 +145,8 @@ class TestResponse(TestBase):
 
 <a name="arch"></a>
 ## Architecture
+
+![project](https://user-images.githubusercontent.com/84901993/128856042-b2d79c13-e9f6-4b02-bff1-86f103de27de.png)
 A microservice application architectured through building objects & containerisation 
 
 <img src="/documentation/userservice1.png" alt="" width="50%" height="50%"/>
