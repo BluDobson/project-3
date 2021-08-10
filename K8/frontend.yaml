@@ -32,7 +32,7 @@ spec:
       containers:
       - name: frontend
         image: 
-        image: team4qa/frontend:latest
+        image: 
         imagePullPolicy: "Always"
         ports:
         - name: frontend-port
