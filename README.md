@@ -13,7 +13,7 @@
 ## Contents
 - [Brief](#brief)
     - [Requirements](#reqs)
-- [Building the Application](#building)
+- [Building the Deployment Structure](#building)
     - [Project Planning](#planning)
     - [Services](#services)
     - [Front End](#front)
@@ -53,17 +53,15 @@ Using what you have learned consider the following:
 -Running costs. What are your monthly estimates? How could they be improved?
 
 <a name="building"></a>
-### Building the Application
-In order to fulfill the requirements of the project I chose to configure a microservice application that would allow services generating random information to communicate and influence the outcomes in other servers. I had a number of diffrent ideas, but eventually settled with creating a Random Holiday Generator. 
-
--
+### Building the Deployment Structure
+In order to fulfill the requirements of the project, we chose to deploy the application via the use of Terraform, Kubernetes, Jenkins and Docker as well as using Amazon Web Services as our cloud provider
 
 <a name="planning"></a>
 ### Project Planning
 
-The project planning was done through a Trello board. This consists of a Backlog, sprint, MOSCOW order of prioritisation as well as items to chekc on completion. Updates were made to this throughout development. 
+The project planning was done through a Trello board. This consists of a Backlog, sprint, MOSCOW order of prioritisation as well as items to check on completion. Updates were made to this board constantly throughout development. 
 
-<img src="/documentation/trello.png" alt="" width="100%" height="100%"/>
+<img width="960" alt="Trello" src="https://user-images.githubusercontent.com/84901993/128853141-0da1eb48-14b7-4497-91bf-ff4c2681003a.PNG">
 
 
 
@@ -71,7 +69,7 @@ The project planning was done through a Trello board. This consists of a Backlog
 ### Services
 
 
-#### Service 1
+#### Terraform
 **Service 1** is the Main service. Service 1 communicates with service 2, 3 and 4 and presists data to a MySQL database. The main service will perform a  **GET request on Service 2 and Service 3** and a **POST request on Service 4**. The responses attained from service 2, service 3 & service 4 are used by service 1 to display information to the user via HTML and Jinja2 templating. Furthermore, I configured the databse to allow the user to see the last three holidays that were genearted via a query to the database. 
 
 **routes located:  service1/application/routes.py**
@@ -107,7 +105,7 @@ A generator button was included in the HTML file to allow users to generate a ra
 ```bash
 <a href="{{ url_for('index')}}"><button>Generate</button></a>
 ```
-#### Service 2
+#### Kubernetes
 
 This service generates a random city. There are 4 possible cities that can be generated.
 
@@ -124,7 +122,7 @@ def city():
 ```
 
 
-#### Service 3
+#### Jenkins
 
 This service generates a random activity. There are 4 possible activities that can be generated. 
 
@@ -140,59 +138,6 @@ def activity():
 
 #### Service 4
 
-Service 4 generates a random price for the Holiday based on the City and activity that were generated in Service 2 and Service 3 respectivley. Service 4 returns this price as a POST request to Service 1 which is then displayed to the user. 
-
-
-**routes located:  service4/application/routes.py**
-
-```bash
-@app.route('/price', methods=['GET', 'POST'])
-
-def price(): 
-
-        price_network = request.data.decode('utf-8')
-        data = price_network.split(" ")
-        activity = data[1]
-        city = data[0]
-
-        if city == "London":
-                if activity == 'Paintballing':
-                        price = '£200 - £400'
-                elif activity == 'Surfing':
-                        price = '£400 - £800'
-                elif activity == 'Snorkelling':
-                        price = '£800 - £1000'
-                elif activity == 'Skiing':
-                        price = '£1000 - £2000'
-        elif city == "Barcelona":
-                if activity == 'Paintballing':
-                        price = '£200 - £400'
-                elif activity == 'Surfing':
-                        price = '£400 - £800'
-                elif activity == 'Snorkelling':
-                        price = '£800 - £1000'
-                elif activity == 'Skiing':
-                        price = '£1000 - £2000'
-        elif city == "Milan":
-                if activity == 'Paintballing':
-                        price = '£200 - £400'
-                elif activity == 'Surfing':
-                        price = '£400 - £800'
-                elif activity == 'Snorkelling':
-                        price = '£800 - £1000'
-                elif activity == 'Skiing':
-                        price = '£1000 - £2000'
-        elif city == "Tokyo":
-                if activity == 'Paintballing':
-                        price = '£200 - £400'
-                elif activity == 'Surfing':
-                        price = '£400 - £800'
-                elif activity == 'Snorkelling':
-                        price = '£800 - £1000'
-                elif activity == 'Skiing':
-                        price = '£1000 - £2000'
-        
-        return Response(price, mimetype="text/plain")
 ```
 
 <a name="Front"></a>
