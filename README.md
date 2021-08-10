@@ -4,7 +4,7 @@
 - Albert Richards
 - Bradley Dobson
 - Inaam Islam
-- Umayr Ahmed 
+- Umayr Ahmed
 - Zahra Ahmed
 
 ### Links
@@ -13,14 +13,9 @@
 ## Contents
 - [Brief](#brief)
     - [Requirements](#reqs)
-- [Building the Deployment Structure](#building)
-    - [Project Planning](#planning)
-    - [Services](#services)
-    - [Front End](#front)
-- [Testing](#test_)
-    - [Service 1 test](#test_1)
-    - [Service 2 & 3 test](#test_2/3)
-    - [Service 4 test](#test_4)
+- [Project Planning](#building)
+    - [Trello Board](#planning)
+    - [Collaboration](#services)
 - [Architecture](#arch)
     - [Container level architecture](#cla)
     - [Application Infrastructure](#appinf)
@@ -29,6 +24,7 @@
 - [Technologies utilised](#tech)
 - [Things that went well](#suc)
 - [Areas for improvement ](#improve)
+- [Github links](#gitlink)
 
 <a name="brief"></a>
 ## Brief
@@ -53,11 +49,11 @@ Using what you have learned consider the following:
 -Running costs. What are your monthly estimates? How could they be improved?
 
 <a name="building"></a>
-### Building the Deployment Structure
+### Project Planning
 In order to fulfill the requirements of the project, we chose to deploy the application via the use of Terraform, Kubernetes, Jenkins and Docker as well as using Amazon Web Services as our cloud provider
 
 <a name="planning"></a>
-### Project Planning
+### Trello Board
 
 The project planning was done through a Trello board. This consists of a Backlog, sprint, MOSCOW order of prioritisation as well as items to check on completion. Updates were made to this board constantly throughout development. 
 
@@ -66,82 +62,9 @@ The project planning was done through a Trello board. This consists of a Backlog
 
 
 <a name="services"></a>
-### Services
+### Collaboration
 
-
-#### Terraform
-
-
-#### Kubernetes
-
-
-
-#### Jenkins
-
-
-#### Service 4
-
-
-<a name="test_2/3"></a>
-### Service 2 & 3 tests
-
-Using Unittest.mock and pytest basic tests were done for both Service 2 & Service 3 to see that the return values were randomly generated. 2 different methods were used. 
-
-**Service 2 test**: complete test can be found at [test_service_2.py](https://github.com/InaamIslam/DevOps_Project2/blob/develop/service2/testing/test_service2.py)
-
-```bash
-class TestService2(TestBase):
-    def test_all_cities(self):
-        for _ in range(20):
-            response = self.client.get(url_for('city'))
-            self.assertIn(response.data.decode("utf-8"),["London", "Barcelona", "Milan", "Tokyo"])
-
-class TestService2(TestBase):
-    def test_London(self):
-        with patch('random.choice') as s:
-            s.return_value = 'London'
-            response = self.client.get(url_for('city'))
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(b'London', response.data)
-```
-**Service 3 test**: complete test can be found at [test_service_3.py](https://github.com/InaamIslam/DevOps_Project2/blob/develop/service3/testing/test_service3.py)
-
-```bash
-class TestService3(TestBase):
-    def test_all_activities(self):
-        for _ in range(20):
-            response = self.client.get(url_for('activity'))
-            self.assertIn(response.data.decode("utf-8"),["Paintballing", "Surfing", "Snorkelling", "Skiing"])
-
-class TestService2(TestBase):
-    def test_paintballing(self):
-        with patch('random.choice') as s:
-            s.return_value = 'Paintballing'
-            response = self.client.get(url_for('activity'))
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(b'Paintballing', response.data)
-```
-
-<a name="test_4"></a>
-### Service 4 test
-
-The unittest.mock method was again used to get mock values of Service 2 and Service 3 and then check that the return value would be accurate as according to the dictates of the programming. 
-
-**Service 4 test**: complete test can be found at [test_service_4.py](https://github.com/InaamIslam/DevOps_Project2/blob/develop/service4/testing/test_service4.py)
-
-```bash
-class TestResponse(TestBase):
-
-    def test_London_Paintball(self):
-        with patch('requests.get') as a:
-            a.return_value.text = 'London'
-            with patch('random.randrange') as b:
-                    b.return_value = 'Paintballing'
-                    response = self.client.post(
-                        url_for('price'),
-                        data = 'London Paintballing')
-                    self.assertEqual(b'200', response.data)
-```
+This was the first group project that we had attempted, so we tried to combine all of our knowledge and skills that we had gained so far in order to work together effectively. We used a [shared Github repository](https://github.com/BluDobson/project-3) that was created by Bradley Dobson, who then invited all of the other team members to become collaborators.
 
 <a name="arch"></a>
 ## Architecture
@@ -231,4 +154,10 @@ A number of things went well for me on this project:
 
 * Implementing the use of JSON to increase data parsing speed, and also as part of sending data between services. 
 
-* Adding an Email server into my Jenkins CI pipeline to send build notifications
+<a name="gitlink"></a>
+## Github Links
+- [Albert Richards](https://github.com/Albert-Richards)
+- [Bradley Dobson](https://github.com/BluDobson)
+- [Inaam Islam](https://github.com/InaamIslam)
+- [Umayr Ahmed](https://github.com/Umayr12)
+- [Zahra Ahmed](https://github.com/ZahraAhmed1)
