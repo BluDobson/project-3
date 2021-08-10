@@ -1,4 +1,4 @@
 variable "ami_id" {
   description = "Golden AMI ID"
-  default     = "ami-09a56048b08f94cdf"
+  default     = "ami-0ec31dfef6b146207"
 }
