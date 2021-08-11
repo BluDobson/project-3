@@ -17,7 +17,7 @@ output()
 }
 
 output "Building the Petclinic FE"
-cd ./spring-petclinic-angular/; npm install; npm run-script build; cd ..
+cd ./Frontend/spring-petclinic-rest-master/; npm install; npm run-script build; cd ..
 
 output "Building spring-petclinic-angular"
 docker build --no-cache -t arichards98/petclinic-fe ./spring-petclinic-angular
