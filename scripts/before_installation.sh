@@ -21,6 +21,7 @@ sudo apt update -y
 
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then 
     error "AWS CLI is not installed"
+fi
 
 
 
