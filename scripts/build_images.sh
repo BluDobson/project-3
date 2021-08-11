@@ -17,13 +17,13 @@ output()
 }
 
 output "Building the Petclinic FE"
-cd ./Frontend/spring-petclinic-rest-master/; npm install; npm run-script build; cd ..
+cd ./Backend/spring-petclinic-rest-master/; npm install; npm run-script build; cd ..
 
 output "Building spring-petclinic-angular"
-docker build --no-cache -t arichards98/petclinic-fe ./spring-petclinic-angular
+docker build --no-cache -t ./Frontend/spring-petclinic-angular-master
 
-if [[ "$(docker images -q arichards98/petclinic-fe:latest 2> /dev/null)" == 22]]; then
-    error "could not rebuild image"
-fi 
+#if [[ "$(docker images -q arichards98/petclinic-fe:latest 2> /dev/null)" == 22]]; then
+#    error "could not rebuild image"
+#fi 
 
 output "Pushing qa/petclinic-be to dockerhub"
