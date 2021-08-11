@@ -17,16 +17,16 @@ output()
 }
 
 output "Deploying the backend objects"
-kubectl apply -f ./k8/backend.yaml
+kubectl apply -f ./K8/backend.yaml
 
 output "Deploying the frontend objects"
-kubectl apply -f ./k8/frontend.yaml
+kubectl apply -f ./K8/frontend.yaml
 
 output "Delay NGINX start for 1 minute while waiting for frontend k8 to start running"
 sleep 1m
 
 output "Deploying the nginx object"
-kubectl apply -f ./k8/nginx.yaml
+kubectl apply -f ./K8/nginx.yaml
 
 output "Waiting 2 minutes for health check of load balancer to complete"
 sleep 2m
