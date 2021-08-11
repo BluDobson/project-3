@@ -21,7 +21,9 @@
 - [Risk Assessment](#risks)
     - [Initial Risk Assessment](#initial)
     - [Final Risk Assessment](#finalra)
+- [Costs](#cost)
 - [Technologies utilised](#tech)
+    - [Reasons for using these Technologies](#reasons)
 - [Things that went well](#suc)
 - [Areas for improvement ](#improve)
 - [Github links](#gitlink)
@@ -99,17 +101,46 @@ Below is a snapshot of part of our final Risk Assessment:
 The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
 
 
+<a name=cost></a>
+## Costs
+
+
 <a name="tech"></a>
 ## Technologies Utilised
 
 * Project Tracking: Trello
-* Version Control System: GitHub
+* Version Control System: Git(Github)
 * Cloud Service: Amazon Web Services
 * Containerization: Docker
 * Version Control for Docker Images: Dockerhub
 * Continous Intergration Server: Jenkins
 * Orchestration Service for Containers: Kubernetes
 * Load Balancing: Nginx
+
+<a name=reasons></a>
+### Reasons for using these Technologies
+
+#### Trello
+When it came to deciding which service we should use for our Kanban Board, the group agreed that Trello would undoubtedly be the best choice. This is because of Trellos ease of use and that each team member has the most experience with Trello over any other type of Kanban board. Trello also makes collaboration with others very straightforward.
+
+#### Git(Github)
+
+#### Amazon Web Services
+
+#### Docker
+Docker is the container service that we chose to use for this project. As a group, we decided that it would be best for us to use Docker as we all had experience with the service from our previous projects. That coupled with the fact that Docker is the industry leading service for containerization and its rapid deployment process is why we opted to use Docker.
+
+#### Dockerhub
+
+#### Jenkins
+Jenkins is the Continous Intergration Server that we chose to use for this project.
+We decided to use jenkins instead of these alternatives due to multiple reasons. Some of these reasons are that the software is free to use and its also easily modified and you are able to automatically build. The biggest reason we chose to use jenkins was because we have all used the software before and all felt confident with our ability to use it. 
+
+#### Kubernetes
+Kubernetes is the container-orchestration service that we chose to use for this project.
+We decided on kubernetes due to its easy scalability and realiabilty. Also after dicussing using docker swarm instead we decided that kubernetes was able to be easierly intergrated into the project.
+
+#### NGINX
 
 
 
