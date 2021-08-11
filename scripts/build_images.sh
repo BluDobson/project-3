@@ -20,9 +20,9 @@ output "Building the Petclinic FE"
 cd ./spring-petclinic-angular/; npm install; npm run-script build; cd ..
 
 output "Building spring-petclinic-angular"
-docker build --no-cache -t (username)/petclinic-fe ./spring-petclinic-angular
+docker build --no-cache -t arichards98/petclinic-fe ./spring-petclinic-angular
 
-if [[ "$(docker images -q (username)/petclinic-fe:latest 2> /dev/null)" == 22]]; then
+if [[ "$(docker images -q arichards98/petclinic-fe:latest 2> /dev/null)" == 22]]; then
     error "could not rebuild image"
 fi 
 
