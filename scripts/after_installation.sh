@@ -17,5 +17,5 @@ output()
 }
 
 output "Removing all dangling images"
-docker system prune -f 
+sudo docker system prune -f 
 
