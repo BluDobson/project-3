@@ -23,5 +23,6 @@ if [[ "$(aws --version 2> /dev/null)" == "" ]]; then
     error "AWS CLI is not installed"
 fi
 
+aws eks update-kubeconfig --name qa_cluster
 
 
