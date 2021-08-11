@@ -5,27 +5,38 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stages {        
-        stage('Build') {
+    stages {
+        stage('Make scripts excecutable') {
             steps {
-                sh "./scripts/build.sh"                    
-            }
-        }
-        stage('Kubernetes Cluster') {
-            steps {
-                sh "./scripts/cluster.sh"              
+                sh "chmod +x ./scripts/*.sh"
             }        
         }
-        stage('Test') {
+        stage('Before installation') {
             steps {
-                sh "./scripts/test.sh"                                      
+                sh "./scripts/before_installation.sh"                    
             }
         }
-        stage('Deploy') {
+        stage('Build images') {
             steps {
-                sh "./scripts/deploy.sh"                         
+                sh "./scripts/build_images.sh"                    
             }
         }
+        stage('Push images to dockerhub') {
+            steps {
+                sh "./scripts/push_images.sh"                    
+            }
+        }
+        stage('Deploy Kubernetes') {
+            steps {
+                sh "./scripts/deploy_kubernetes.sh"                    
+            }
+        }
+        stage('After installation') {
+            steps {
+                sh "./scripts/after_installation.sh"                    
+            }
+        }
+        
     }    
 }
 
