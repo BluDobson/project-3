@@ -136,13 +136,13 @@ Docker is the container service that we chose to use for this project. As a grou
 The decision to use Dockerhub as the repository for our container images was a fairly simple one. We chose to use Dockerhub as all of the team members had an account and it was also the only version control for Docker images that we had experience with at this current time. 
 
 #### Jenkins
-Jenkins is the Continous Intergration Server that we decided to use for this project. We decided to use Jenkins due to our experience with the software, the fact that it is free to use and it is also easily modified. The automatic build feature was also taken into consideration when we opted for the use of Jenkins. 
+Jenkins is the Continous Intergration Server that we decided to use for this project. We decided to use Jenkins due to our experience with the software, the fact that it is free to use and it is also easy to modify. The automatic build feature was also taken into consideration when we opted for the use of Jenkins. 
 
 #### Kubernetes
-The container-orchestration service that we selected to use for this project was Kubernetes. We decided on Kubernetes due to its easy scalability and realiabilty. Also after dicussing using docker swarm instead we decided that kubernetes was able to be easierly intergrated into the project.
+The container orchestration service that we selected to use for this project was Kubernetes. We decided on Kubernetes due to its easy scalability and realiabilty. We had also not used Kubernetes in previous projects and felt that it would be good to attempt its use in this project.
 
 #### NGINX
-
+We used NGINX as our load balancer due to the teams previous expirience with using this software as well as the fact that it is simple to use, yet is still powerful.
 
 
 
