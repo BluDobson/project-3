@@ -124,8 +124,10 @@ The full Risk Assessment can be found on the [Github Repository](https://github.
 When it came to deciding which service we should use for our Kanban Board, the group agreed that Trello would undoubtedly be the best choice. This is because of Trellos ease of use and that each team member has the most experience with Trello over any other type of Kanban board. Trello also makes collaboration with others very straightforward.
 
 #### Git(Github)
+We decided to use Git as our VCS due to Git being the most popular VCS and it is also the VCS that we had the most experience with as a group. We chose to use Github due to its ability to allow seamless collaboration without compromising the integrity of the original project.
 
 #### Amazon Web Services
+We used AWS as our cloud provider to help increase our knowledge of AWS and the tools it provides. Although the team had more experience with using Google Cloud Platform, we still had some knowledge of AWS. We felt as though we should use AWS to help advance our comprehension of AWS and take advantage of the services it has to offer. We had also not used AWS in project work prior to this and we felt as though we had the confidence to challenge ourselves. The AWS services also seemed to be tailored better to fit our project aim. All of these things contributed to our decision to use AWS.
 
 #### Docker
 Docker is the container service that we chose to use for this project. As a group, we decided that it would be best for us to use Docker as we all had experience with the service from our previous projects. That coupled with the fact that Docker is the industry leading service for containerization and its rapid deployment process is why we opted to use Docker.
