@@ -133,14 +133,13 @@ We used AWS as our cloud provider to help increase our knowledge of AWS and the 
 Docker is the container service that we chose to use for this project. As a group, we decided that it would be best for us to use Docker as we all had experience with the service from our previous projects. That coupled with the fact that Docker is the industry leading service for containerization and its rapid deployment process is why we opted to use Docker.
 
 #### Dockerhub
+The decision to use Dockerhub as the repository for our container images was a fairly simple one. We chose to use Dockerhub as all of the team members had an account and it was also the only version control for Docker images that we had experience with at this current time. 
 
 #### Jenkins
-Jenkins is the Continous Intergration Server that we chose to use for this project.
-We decided to use jenkins instead of these alternatives due to multiple reasons. Some of these reasons are that the software is free to use and its also easily modified and you are able to automatically build. The biggest reason we chose to use jenkins was because we have all used the software before and all felt confident with our ability to use it. 
+Jenkins is the Continous Intergration Server that we decided to use for this project. We decided to use Jenkins due to our experience with the software, the fact that it is free to use and it is also easily modified. The automatic build feature was also taken into consideration when we opted for the use of Jenkins. 
 
 #### Kubernetes
-Kubernetes is the container-orchestration service that we chose to use for this project.
-We decided on kubernetes due to its easy scalability and realiabilty. Also after dicussing using docker swarm instead we decided that kubernetes was able to be easierly intergrated into the project.
+The container-orchestration service that we selected to use for this project was Kubernetes. We decided on Kubernetes due to its easy scalability and realiabilty. Also after dicussing using docker swarm instead we decided that kubernetes was able to be easierly intergrated into the project.
 
 #### NGINX
 
