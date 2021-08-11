@@ -1,7 +1,7 @@
 version: "3.7"
 services: 
   backend:
-  container_name: back-end
+    container_name: back-end
     image: springcommunity/spring-petclinic-rest:latest
     ports:
     - target: 9966
@@ -21,3 +21,14 @@ services:
       protocol: tcp
     depends_on:
     - backend 
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    image: arichards98/nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp

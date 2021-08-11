@@ -1,4 +1,4 @@
-From nginx:latest
+From nginx:stable
 WORKDIR /etc/nginx/conf.d
 RUN rm ./default.conf
-COPY ./reverse_proxy.conf .
+COPY ./proxy.conf .
