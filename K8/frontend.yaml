@@ -31,8 +31,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 
-        image: 
+        image: arichards98/frontend:latest
         imagePullPolicy: "Always"
         ports:
         - name: frontend-port

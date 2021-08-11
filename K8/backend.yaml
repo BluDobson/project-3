@@ -30,8 +30,7 @@ spec:
     spec:
       containers:
         - name:  backend
-          image: 
-          image: 
+          image: springcommunity/spring-petclinic-rest:latest
           imagePullPolicy: "Always"
           ports:
           - name: backend
