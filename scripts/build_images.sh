@@ -1,8 +1,8 @@
 #!/bin/bash
 # ------------------------------------------------------------------
-# Script Name: build_images.sh
-# Description: Building the images for both the spring-petclinic
-#              frontend and backend
+# Script Name: images_push.sh
+# Description: Pushing images for both the spring-petclinic
+#              frontend and backend to docker hub
 # Author     : QA
 # ------------------------------------------------------------------
 
@@ -22,31 +22,24 @@ output()
     echo "[OUTPUT]:" "$1" 1>&2
 }
 
-output "Building the Petclinic FE"
-cd ./spring-petclinic-angular/; npm install; npm run-script build; cd ..
+output "arichards98/frontend:latest to dockerhub"
 
-output "Building spring-petclinic-angular"
-docker build --no-cache -t qa/petclinic-fe ./spring-petclinic-angular
-
-if [[ "$(docker images -q qa/petclinic-fe:latest 2> /dev/null)" == "" ]]; then
-    error "could not rebuild image"
+if [[ ! "$(docker images -q arichards98/frontend:latest 2> /dev/null)" == "" ]]; then
+    output "Image exists"
+    docker push arichards98/frontend:latest
 fi
 
-output "Running maven clean install to rebuild the jar file"
-cd ./spring-petclinic-rest/; mvn clean install; cd ..
+output "Pushing arichards98/backend:latest to dockerhub"
 
-output "Building spring-petclinic-rest"
-docker build --no-cache -t qa/petclinic-be ./spring-petclinic-rest
-
-if [[ "$(docker images -q qa/petclinic-be:latest 2> /dev/null)" == "" ]]; then
-    error "could not rebuild image"
+if [[ ! "$(docker images -q arichards98/backend:latest 2> /dev/null)" == "" ]]; then
+    output "Image exists"
+    docker push arichards98/backend:latest
 fi
 
-output "Building nginx image"
-docker build --no-cache -t qa/nginx ./NGINX
+output "Pushing arichards98/nginx:latest to dockerhub"
 
-if [[ "$(docker images -q qa/nginx:latest 2> /dev/null)" == "" ]]; then
-    error "could not rebuild image"
+if [[ ! "$(docker images -q arichards98/nginx:latest 2> /dev/null)" == "" ]]; then
+    output "Image exists"
+    docker push arichards98/nginx:latest
 fi
-
 
