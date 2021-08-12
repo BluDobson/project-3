@@ -27,7 +27,6 @@ sudo apt-get update && sudo apt-get install terraform
 
 output "Initialing Terraform config"
 cd ./Terraform
-aws ec2 create-key-pair --key-name KeyPair --query ‘KeyMaterial’ --output text > ~/key_pair/KeyPair.pem
 terraform init
 terraform apply
 
