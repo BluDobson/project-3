@@ -4,7 +4,7 @@ variable "ami_id" {
 
 variable "instance" {
   description = "instance type for the manager"
-  default     = "t2.micro"
+  default     = "t2.medium"
 }
 
 variable "key_name" {
