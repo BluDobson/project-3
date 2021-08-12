@@ -26,7 +26,9 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 sudo apt-get update && sudo apt-get install terraform
 
 output "Initialing Terraform config"
-cd ./Terraform && terraform init
+cd ./Terraform
+aws ec2 create-key-pair --key-name KeyPair --query ‘KeyMaterial’ --output text > ~/key_pair/KeyPair.pem
+terraform init
 terraform apply
 
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then 
