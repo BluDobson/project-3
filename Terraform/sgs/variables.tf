@@ -13,7 +13,7 @@ variable "ip_addresses" {
 variable "ingress_ports" {
   type        = list(number)
   description = "List of ingress ports"
-  default     = [22, 9090, 80]
+  default     = [22, 9090, 80, 8080]
 }
 
 variable "outbound_port" {
