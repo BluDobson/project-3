@@ -16,14 +16,14 @@ output()
     echo "[OUTPUT]:" "$1" 1>&2
 }
 
-output "Building the petclinic backend"
-cd ./Backend/spring-petclinic-rest-master/; npm install; npm run-script build; cd ..
+output "Building the petclinic frontend"
+cd ./Frontend/spring-petclinic-angular-master/; npm install; npm run-script build; cd ..
 
-output "Building spring-petclinic-angular"
-docker build --no-cache -t arichards98/frontend:latest ./Frontend/spring-petclinic-angular-master
+output "Running maven clean install to rebuild the jar file"
+cd ./Backend/spring-petclinic-rest-master/; mvn clean install; cd ..
 
-output "Building nginx images"
-docker build -t arichards98/nginx:latest -f ./containers/nginx/ .
+output "Building images"
+docker-compose up -d ./containers docker-compose.yaml
 
 #if [[ "$(docker images -q arichards98/petclinic-fe:latest 2> /dev/null)" == 22]]; then
 #    error "could not rebuild image"
