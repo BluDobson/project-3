@@ -49,6 +49,6 @@ resource "tls_private_key" "this" {
   algorithm = "RSA"
 }
 
-module "key_pair" {
-  source     = "./key_pair"
-}
+#module "key_pair" {
+#  source     = "./key_pair"
+#}
