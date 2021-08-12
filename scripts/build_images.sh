@@ -22,6 +22,8 @@ output()
     echo "[OUTPUT]:" "$1" 1>&2
 }
 
+sudo chmod 666 /var/run/docker.sock
+
 output "Building the Petclinic FE"
 cd ./spring-petclinic-angular/; npm install; npm run-script build; cd ..
 
