@@ -17,11 +17,13 @@ output()
     echo "[OUTPUT]:" "$1" 1>&2
 }
 
-output "Pushing qa/petclinic-fe to dockerhub"
+output "Pushing images to dockerhub"
 
-if [[ ! "$(docker images -q qa/petclinic-fe:latest 2> /dev/null)" == "" ]]; then
-    output "Image exists"
-    docker push qa/petclinic-fe
-fi 
+docker-compose push ./containers
 
-output "Pushing qa/petclinic-be to dockerhub"
+#if [[ ! "$(docker images -q qa/petclinic-fe:latest 2> /dev/null)" == "" ]]; then
+#    output "Image exists"
+#    docker push qa/petclinic-fe
+#fi 
+
+#output "Pushing qa/petclinic-be to dockerhub"
