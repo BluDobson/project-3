@@ -25,10 +25,10 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 sudo apt-get update && sudo apt-get install terraform
 
-#output "Initialing Terraform config"
-#cd ./Terraform
-#terraform init
-#terraform apply
+output "Initialing Terraform config"
+cd ./Terraform
+terraform init
+terraform apply --auto-approve
 
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then 
     error "AWS CLI is not installed"
