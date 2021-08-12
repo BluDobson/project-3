@@ -27,7 +27,7 @@ sudo apt-get update && sudo apt-get install terraform
 
 output "Initialing Terraform config"
 cd ./Terraform && terraform init
-terraform create
+terraform apply
 
 if [[ "$(aws --version 2> /dev/null)" == "" ]]; then 
     error "AWS CLI is not installed"
