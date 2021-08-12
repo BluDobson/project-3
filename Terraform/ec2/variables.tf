@@ -9,7 +9,7 @@ variable "instance" {
 
 variable "key_name" {
   description = "Key pair for the manager"
-  default     = "brad-pair"
+  default     = "NewKeyPair"
 }
 
 variable "enable_public_ip" {
