@@ -1,8 +1,8 @@
 #!/bin/bash
 # ------------------------------------------------------------------
-# Script Name: images_push.sh
-# Description: Pushing images for both the spring-petclinic
-#              frontend and backend to docker hub
+# Script Name: build_images.sh
+# Description: Building the images for both the spring-petclinic
+#              frontend and backend
 # Author     : QA
 # ------------------------------------------------------------------
 
@@ -22,24 +22,31 @@ output()
     echo "[OUTPUT]:" "$1" 1>&2
 }
 
-output "arichards98/frontend:latest to dockerhub"
+output "Building the Petclinic FE"
+cd ./spring-petclinic-angular/; npm install; npm run-script build; cd ..
 
-if [[ ! "$(docker images -q arichards98/frontend:latest 2> /dev/null)" == "" ]]; then
-    output "Image exists"
-    docker push arichards98/frontend:latest
+output "Building spring-petclinic-angular"
+docker build --no-cache -t arichards98/frontend:latest ./spring-petclinic-angular
+
+if [[ "$(docker images -q arichards98/frontend:latest 2> /dev/null)" == "" ]]; then
+    error "could not rebuild image"
 fi
 
-output "Pushing arichards98/backend:latest to dockerhub"
+output "Running maven clean install to rebuild the jar file"
+cd ./spring-petclinic-rest/; mvn clean install; cd ..
 
-if [[ ! "$(docker images -q arichards98/backend:latest 2> /dev/null)" == "" ]]; then
-    output "Image exists"
-    docker push arichards98/backend:latest
+output "Building spring-petclinic-rest"
+docker build --no-cache -t arichards98/backend:latest ./spring-petclinic-rest
+
+if [[ "$(docker images -q arichards98/backend:latest 2> /dev/null)" == "" ]]; then
+    error "could not rebuild image"
 fi
 
-output "Pushing arichards98/nginx:latest to dockerhub"
+output "Building nginx image"
+docker build --no-cache -t arichards98/nginx:latest ./NGINX
 
-if [[ ! "$(docker images -q arichards98/nginx:latest 2> /dev/null)" == "" ]]; then
-    output "Image exists"
-    docker push arichards98/nginx:latest
+if [[ "$(docker images -q arichards98/nginx:latest 2> /dev/null)" == "" ]]; then
+    error "could not rebuild image"
 fi
+
 
