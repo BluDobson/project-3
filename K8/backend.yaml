@@ -2,15 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
    name:  backend
-   labels:
-     app:  backend
 spec:
-   ports:
-     - protocol: TCP
-       port: 9966
-       targetPort: 9966
-   selector:
-     app:  backend
+  selector:
+    app:  backend
+  ports:
+  - protocol: TCP
+    port: 9966
+    targetPort: 9966
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -28,10 +27,16 @@ spec:
       labels:
         app:  backend
     spec:
+      hostname: backend
       containers:
         - name:  backend
           image: arichards98/backend:latest
-          imagePullPolicy: "Always"
+          resources:
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+            requests:
+              cpu: "1"
+              memory: "1Gi"
           ports:
-          - name: backend
-            containerPort: 9966
+          - containerPort: 9966
