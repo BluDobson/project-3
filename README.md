@@ -21,7 +21,6 @@
 - [Risk Assessment](#risks)
     - [Initial Risk Assessment](#initial)
     - [Final Risk Assessment](#finalra)
-- [Costs](#cost)
 - [Technologies utilised](#tech)
     - [Reasons for using these Technologies](#reasons)
 - [Things that went well](#suc)
@@ -101,10 +100,6 @@ Below is a snapshot of part of our final Risk Assessment:
 The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
 
 
-<a name=cost></a>
-## Costs
-
-
 <a name="tech"></a>
 ## Technologies Utilised
 
@@ -149,12 +144,19 @@ We used NGINX as our load balancer due to the teams previous expirience with usi
 <a name="suc"></a>
 ## Things that went well 
 
-A number of things went well for us on this project:
+### Teamwork
+We collaborated well on this project considering it was the first project that any of the team members had participated in that involved working in a team. We managed to stick to our given roles whilst distrubing the workload in a tactical manner that allied with the teams goals.
 
+### Good Communication
+Throughout the project we maintained a good level of communication, which was vital to the project being successful. Each team member knew about the current position of the team as a whole and there was no long periods of time in which we were not productive due to the fact that we kept the communication in the team constant throughout the length of the project.
 
+### Terraforms
+We were able to utilise Terraform quite early in our project timeline which allowed us to create, update and destroy subnets, security groups and EC2 instances quickly and efficiently. This was a success due to the fact that we were able to implement it quickly and that we ran into a limited number of issues whilst attempting to get Terraforms to work.
 
 <a name="improve"></a>
 ## Areas for improvement:
+### Familiarity with the resources used
+One area for improvement would be how familiar we were with certain resources used in the project. Although we had some experience of all of the resources used, some of the resources were more difficult to understand as we had not used them on this level before. This meant that some project time was spent researching and learning how these resources could be used for our intended purposes. One thing that was positive about this issue is that each team member had a different level of understanding for each resource, and due to good communication we were able to use this to our advantage as the team members would undertake tasks that involve the resources that they have a greater understanding of.
 
 
 <a name="gitlink"></a>
