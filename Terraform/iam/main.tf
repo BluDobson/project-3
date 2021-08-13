@@ -29,17 +29,22 @@ resource "aws_iam_role_policy_attachment" "node_iam_role-AmazonEC2ContainerRegis
 
 resource "aws_iam_role" "cluster_iam_role" {
   name = "cluster_iam_role"
-  assume_role_policy = jsonencode({
-    Statement = [{
-      Action = "sts:AssumeRole"
-      Effect = "Allow"
-      Principal = {
-        Service = "eks.amazonaws.com"
+  assume_role_policy = <<POLICY
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+      "Effect": "Allow",
+      "Principal": {
+      "Service": "eks.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
       }
-    }]
-    Version = "2012-10-17"
-  })
+    ]
 }
+POLICY
+}
+  
 
 resource "aws_iam_role_policy_attachment" "cluster_iam_role-AmazonEKSClusterPolicy" {
   policy_arn = var.eks_cluster_policy
