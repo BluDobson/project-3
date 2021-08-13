@@ -96,6 +96,7 @@ The full Risk Assessment can be found on the [Github Repository](https://github.
 
 Below is a snapshot of part of our final Risk Assessment:
 
+<img width="846" alt="Final RA" src="https://user-images.githubusercontent.com/84901993/129339669-553d52ef-0e19-405b-9994-bd2d6a4f679b.PNG">
 
 The full Risk Assessment can be found on the [Github Repository](https://github.com/BluDobson/project-3) for this project.
 
