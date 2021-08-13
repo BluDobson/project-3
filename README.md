@@ -155,9 +155,12 @@ We were able to utilise Terraform quite early in our project timeline which allo
 
 <a name="improve"></a>
 ## Areas for improvement:
+
 ### Familiarity with the resources used
 One area for improvement would be how familiar we were with certain resources used in the project. Although we had some experience of all of the resources used, some of the resources were more difficult to understand as we had not used them on this level before. This meant that some project time was spent researching and learning how these resources could be used for our intended purposes. One thing that was positive about this issue is that each team member had a different level of understanding for each resource, and due to good communication we were able to use this to our advantage as the team members would undertake tasks that involve the resources that they have a greater understanding of.
 
+### Addition of extra/different features
+If we had more time as a group to complete the project, we feel as though a number of other features could have been added. One feature that could have been added was a functioning database that works alongside the application. Another feature that could have been used is AWS Pipeline. If we had more time we could have researched how to implement an AWS pipeline, which would have made Jenkins obsolete. This would have been a good feature to add as the AWS pipeline would be inside AWS, which means that it would have better integreation with the other AWS features we have used. One thing that was positive about this issue is that although we were unable to implement any extra features, we ensured that the MVP was met via the use of different services and features.
 
 <a name="gitlink"></a>
 ## Github Links
